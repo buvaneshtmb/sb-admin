@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Dashboard from './components/Dashboard';
+import SideBar from './components/SideBar';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  let data={
+    earningsMonthly:"40,000",
+    earningsAnnual:"2,40,000",
+    taskCompletion:"60",
+    pendingRequests:"18"
+  }
+  return <div id='wrapper'>
+         <SideBar/>  
+         <Dashboard data={data}/>  
+       </div>
 }
 
 export default App;

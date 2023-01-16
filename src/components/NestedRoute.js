@@ -29,7 +29,7 @@ function NestedRoute() {
                                 <b>Home of Nested Route</b>
                             </div>
                         </li>
-                    </Link>
+                    </Link> 
                 </ul>
             </div>
             <Outlet />

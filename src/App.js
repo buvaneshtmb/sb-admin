@@ -7,16 +7,54 @@ import EditUser from './components/EditUser';
 import NestedRoute from './components/NestedRoute';
 import Profile from './components/Profile';
 import Account from './components/Account';
+import { useState } from 'react';
 
 
 function App() {
-  let data = { earningsMonthly: "40,000", earningsAnnual: "2,40,000", taskCompletion: "60", pendingRequests: "18" }
+  let data = { earningsMonthly: "40,000", earningsAnnual: "2,40,000", taskCompletion: "60", pendingRequests: "18" };
+  let [students,setStudents]=useState([
+    {
+      name:"nag",
+      email:"nag@gmail.com",
+      mobile:"8459034894",
+      sessionTime:"10am to 12pm",
+      batch:"B40"
+    },
+    {
+      name:"buvan",
+      email:"buvan@gmail.com",
+      mobile:"897579945834",
+      sessionTime:"10am to 12pm",
+      batch:"B40"
+    },
+    {
+      name:"khaleel",
+      email:"khaleel@gmail.com",
+      mobile:"5635385757",
+      sessionTime:"10am to 12pm",
+      batch:"B40"
+    },
+    {
+      name:"arun",
+      email:"arun@gmail.com",
+      mobile:"5635385757",
+      sessionTime:"10am to 12pm",
+      batch:"B40"
+    },
+    {
+      name:"mohideen",
+      email:"mohideen@gmail.com",
+      mobile:"5635385757",
+      sessionTime:"10am to 12pm",
+      batch:"B40"
+    }
+  ])
 
   return <div id='wrapper'>
     <SideBar />
     <Routes>
-      <Route path='/dashboard' element={<Dashboard data={data} />} />
-      <Route path='/add-user' element={<AddUser />} />
+      <Route path='/dashboard' element={<Dashboard data={data} students={students} setStudents={setStudents} />} />
+      <Route path='/add-user' element={<AddUser students={students} setStudents={setStudents}/>} />
       <Route path='/edit-user/:id' element={<EditUser />} />
       <Route path='/nested-route-example' element={<NestedRoute />}>
         <Route path='profile' element={<Profile />} />

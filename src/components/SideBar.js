@@ -31,10 +31,10 @@ function SideBar() {
 
             <li className="nav-item">
                 <Link to='/add-user'>
-                <a className="nav-link collapsed" href="javascript(void)" data-toggle="collapse" data-target="#collapseTwo"
+                <a className="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i className="fas fa-fw fa-cog"></i>
-                    <span>Add Persion</span>
+                    <span>Add Person</span>
                 </a>
                 </Link>
             </li>

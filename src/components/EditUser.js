@@ -1,35 +1,37 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate, useParams } from 'react-router-dom'
 import { getDefaultNormalizer } from '@testing-library/react';
 import { ToastContainer,toast } from 'react-toastify';
+import { StudentContext } from '../App';
 
 
 
-function EditUser({ students, setStudents }) {
+function EditUser() {
   let params = useParams()
   let navigate = useNavigate()
+  let context=useContext(StudentContext)
 
-  let [name, setName] = useState("")
-  let [email, setEmail] = useState("")
-  let [mobile, setMobile] = useState("")
-  let [batch, setBatch] = useState("")
-  let [sessionTime, setSessionTime] = useState("10am to 12pm")
+  let [name, setName] = useState(context.students[params.id].name)
+  let [email, setEmail] = useState(context.students[params.id].email)
+  let [mobile, setMobile] = useState(context.students[params.id].mobile)
+  let [batch, setBatch] = useState(context.students[params.id].batch)
+  let [sessionTime, setSessionTime] = useState(context.students[params.id].sessionTime)
 
-  let getdata=()=>{
-    setName(students[params.id].name)
-    setEmail(students[params.id].email)
-    setMobile(students[params.id].mobile)
-    setBatch(students[params.id].batch)
-    setSessionTime(students[params.id].sessionTime)
-    toast.success("Data Fetched Success")
-  }
+  // let getdata=()=>{
+  //   setName()
+  //   setEmail()
+  //   setMobile()
+  //   setBatch()
+  //   setSessionTime()
+  //   toast.success("Data Fetched Success")
+  // }
 
   //withot dependency array - it will load for the first time and every statechanges(this will triggered for everything(any state change this will get triggered))
-  useEffect(() => {
-    getdata()
-    },[])
+  // useEffect(() => {
+  //   getdata()
+  //   },[])
 
   //with empty dependency array - it will run for the first time alone(this will triggered for first time)
   // useEffect(()=>{
@@ -42,7 +44,7 @@ function EditUser({ students, setStudents }) {
   // },[name,email])
 
   let handleSubmit = () => {
-    let newArray = [...students]
+    let newArray = [...context.students]
     newArray.splice(params.id, 1, {
       name,
       email,
@@ -50,8 +52,9 @@ function EditUser({ students, setStudents }) {
       batch,
       sessionTime
     })
-    setStudents(newArray)
+    context.setStudents(newArray)
     navigate('/dashboard')
+    toast.success("Data Updated Success")
   }
 
   return <div className='container-fluid'>

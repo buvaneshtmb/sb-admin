@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { ToastContainer,toast } from 'react-toastify';
+import { StudentContext } from '../App';
 
 
-function AddUser({students,setStudents}) {
+function AddUser() {
   let navigate = useNavigate()
+  let context=useContext(StudentContext)
   let [name, setName] = useState("")
   let [email, setEmail] = useState("")
   let [mobile, setMobile] = useState("")
@@ -15,7 +17,7 @@ function AddUser({students,setStudents}) {
   let [sessionTime, setSessionTime] = useState("10am to 12pm")
 
   let handleSubmit = () => {
-    let newArray =[...students]
+    let newArray =[...context.students]
     newArray.push({
       name,
       email,
@@ -23,7 +25,7 @@ function AddUser({students,setStudents}) {
       batch,
       sessionTime
     })
-    setStudents(newArray)
+    context.setStudents(newArray)
     navigate('/dashboard')
     toast.success(`${name} added Successfully`)
   }

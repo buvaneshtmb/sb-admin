@@ -8,6 +8,8 @@ import NestedRoute from './components/NestedRoute';
 import Profile from './components/Profile';
 import Account from './components/Account';
 import { useState } from 'react';
+import React from 'react';
+export const StudentContext = React.createContext();
 
 
 function App() {
@@ -52,17 +54,19 @@ function App() {
 
   return <div id='wrapper'>
     <SideBar />
-    <Routes>
-      <Route path='/dashboard' element={<Dashboard data={data} students={students} setStudents={setStudents} />} />
-      <Route path='/add-user' element={<AddUser students={students} setStudents={setStudents} />} />
-      <Route path='/edit-user/:id' element={<EditUser students={students} setStudents={setStudents} />} />
-      <Route path='/nested-route-example' element={<NestedRoute />}>
-        <Route path='profile' element={<Profile />} />
-        <Route path='account' element={<Account />} />
-      </Route>
-      {/* <Route path='/*' element={<AddUser/>}/> */}
-      <Route path='*' element={<Navigate to={'/dashboard'} />} />
-    </Routes>
+    <StudentContext.Provider value={{ students, setStudents }}>
+      <Routes>
+        <Route path='/dashboard' element={<Dashboard data={data} />} />
+        <Route path='/add-user' element={<AddUser />} />
+        <Route path='/edit-user/:id' element={<EditUser students={students} setStudents={setStudents} />} />
+        <Route path='/nested-route-example' element={<NestedRoute />}>
+          <Route path='profile' element={<Profile />} />
+          <Route path='account' element={<Account />} />
+        </Route>
+        {/* <Route path='/*' element={<AddUser/>}/> */}
+        <Route path='*' element={<Navigate to={'/dashboard'} />} />
+      </Routes>
+    </StudentContext.Provider>
   </div>
 }
 

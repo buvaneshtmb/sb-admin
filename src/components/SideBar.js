@@ -40,7 +40,7 @@ function SideBar() {
             </li>
 
             <li className="nav-item">
-                <Link to='/edit-user/1'>
+                <Link to='/edit-user/'>
                 <div className="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities"  aria-expanded="true" aria-controls="collapseUtilities">
                     <i className="fas fa-fw fa-wrench"></i>
                     <span>Edit User</span>

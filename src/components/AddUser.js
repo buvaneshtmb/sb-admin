@@ -3,6 +3,8 @@ import { useSearchParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { ToastContainer,toast } from 'react-toastify';
+
 
 function AddUser({students,setStudents}) {
   let navigate = useNavigate()
@@ -23,6 +25,7 @@ function AddUser({students,setStudents}) {
     })
     setStudents(newArray)
     navigate('/dashboard')
+    toast.success(`${name} added Successfully`)
   }
 
   return <div className='container-fluid'>

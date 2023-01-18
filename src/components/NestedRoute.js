@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Outlet, Link } from 'react-router-dom'
 
 function NestedRoute() {
@@ -9,27 +9,9 @@ function NestedRoute() {
             <div><p>in this component we are going to see the concept of nested routings</p></div>
             <div>
                 <ul>
-                    <Link to='profile'>
-                        <li>
-                            <div>
-                                <b>Profile</b>
-                            </div>
-                        </li>
-                    </Link>
-                    <Link to='account'>
-                        <li>
-                            <div>
-                                <b>Account</b>
-                            </div>
-                        </li>
-                    </Link>
-                    <Link to='nested-route-example'>
-                        <li>
-                            <div>
-                                <b>Home of Nested Route</b>
-                            </div>
-                        </li>
-                    </Link> 
+                    <li><Link to='profile'><b>Profile</b></Link></li>
+                    <li><Link to='account'><b>Account</b></Link></li>
+                    <li><Link to='nested-route-example'><b>Home of Nested Route</b></Link></li>
                 </ul>
             </div>
             <Outlet />

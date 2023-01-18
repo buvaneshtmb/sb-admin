@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate, useParams } from 'react-router-dom'
 import { getDefaultNormalizer } from '@testing-library/react';
 import { ToastContainer,toast } from 'react-toastify';
-import { StudentContext } from '../App';
+import { StudentContext } from './ContexComponent/StudentContextComponent';
 
 
 

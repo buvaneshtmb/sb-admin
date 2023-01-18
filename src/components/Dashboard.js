@@ -5,14 +5,15 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import { StudentContext } from '../App';
+import { StudentContext } from './ContexComponent/StudentContextComponent';
+import { DashboardContext } from './ContexComponent/DashboardContextComponent';
 
 
-function Dashboard({data}) {
+function Dashboard() {
   // console.log(data)
   let navigate = useNavigate()
+  let dashContext=useContext(DashboardContext)
   let context=useContext(StudentContext)
-  console.log(context.students)
   let handleDelete = (i) => {
     toast.error(`${context.students[i].name}Data Deleted Successfully`)
     let newArray = [...context.students]//deep copy or clone the state
@@ -36,13 +37,13 @@ function Dashboard({data}) {
           </div>
 
           <div className="row">
-            <BasicCard data={{ value: data.earningsMonthly, icon: 'fa-calender', cardBorder: 'primary' }} />
-            <BasicCard data={{ value: data.earningsAnnual, icon: 'fa-calender', cardBorder: 'success' }} />
-            <ProgressCard value={data.taskCompletion} icon={'fa-clipboard-list'} cardBorder={'info'} />
-            <BasicCard data={{ value: data.pendingRequests, icon: 'fa-comments', cardBorder: 'warning' }} />
-
+            <BasicCard data={{ value: dashContext.earningsMonthly, icon: 'fa-calender', cardBorder: 'primary' }} />
+            <BasicCard data={{ value: dashContext.earningsAnnual, icon: 'fa-calender', cardBorder: 'success' }} />
+            <ProgressCard value={dashContext.taskCompletion} icon={'fa-clipboard-list'} cardBorder={'info'} />
+            <BasicCard data={{ value: dashContext.pendingRequests, icon: 'fa-comments', cardBorder: 'warning' }} />
           </div>
-          <div>
+
+          <div className='row'>
             <Table striped bordered hover>
               <thead>
                 <tr>

@@ -1,10 +1,7 @@
-import React,{useContext} from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { StudentContext } from '../App'
 
 function SideBar() {
-    let context=useContext(StudentContext) 
-    console.log(context)
     return <>
         <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -19,10 +16,10 @@ function SideBar() {
 
             <li className="nav-item active">
                 <Link to='/dashboard'>
-                <div className="nav-link">
-                    <i className="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </div>
+                    <div className="nav-link">
+                        <i className="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </div>
                 </Link>
             </li>
 
@@ -34,30 +31,30 @@ function SideBar() {
 
             <li className="nav-item">
                 <Link to='/add-user'>
-                <a className="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i className="fas fa-fw fa-cog"></i>
-                    <span>Add Person</span>
-                </a>
+                    <a className="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                        <i className="fas fa-fw fa-cog"></i>
+                        <span>Add Person</span>
+                    </a>
                 </Link>
             </li>
 
             <li className="nav-item">
                 <Link to='/edit-user/'>
-                <div className="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities"  aria-expanded="true" aria-controls="collapseUtilities">
-                    <i className="fas fa-fw fa-wrench"></i>
-                    <span>Edit User</span>
-                </div>
+                    <div className="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                        <i className="fas fa-fw fa-wrench"></i>
+                        <span>Edit User</span>
+                    </div>
                 </Link>
 
             </li>
 
             <li className="nav-item">
                 <Link to='/nested-route-example'>
-                <div className="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities"  aria-expanded="true" aria-controls="collapseUtilities">
-                    <i className="fas fa-fw fa-wrench"></i>
-                    <span>Nested Route</span>
-                </div>
+                    <div className="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                        <i className="fas fa-fw fa-wrench"></i>
+                        <span>Nested Route</span>
+                    </div>
                 </Link>
 
             </li>

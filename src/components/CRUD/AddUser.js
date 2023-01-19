@@ -1,10 +1,9 @@
 import React, { useState,useContext } from 'react'
-import { useSearchParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { ToastContainer,toast } from 'react-toastify';
-import { StudentContext } from './ContexComponent/StudentContextComponent';
+import { toast } from 'react-toastify';
+import { StudentContext } from '../ContexComponent/StudentContextComponent';
 
 
 function AddUser() {

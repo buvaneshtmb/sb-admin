@@ -1,11 +1,9 @@
-import React, { useEffect, useState,useContext } from 'react'
+import React, { useState,useContext } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate, useParams } from 'react-router-dom'
-import { getDefaultNormalizer } from '@testing-library/react';
 import { ToastContainer,toast } from 'react-toastify';
-import { StudentContext } from './ContexComponent/StudentContextComponent';
-
+import { StudentContext } from '../ContexComponent/StudentContextComponent';
 
 
 function EditUser() {
@@ -52,9 +50,9 @@ function EditUser() {
       batch,
       sessionTime
     })
+    toast.success("Data Updated Success")
     context.setStudents(newArray)
     navigate('/dashboard')
-    toast.success("Data Updated Success")
   }
 
   return <div className='container-fluid'>

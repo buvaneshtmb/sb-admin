@@ -1,12 +1,11 @@
 import React,{useContext} from 'react'
-import BasicCard from './Card';
-import { ProgressCard } from './Card';
+import BasicCard,{ ProgressCard } from '../Card/Card';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import { StudentContext } from './ContexComponent/StudentContextComponent';
-import { DashboardContext } from './ContexComponent/DashboardContextComponent';
+import { StudentContext } from '../ContexComponent/StudentContextComponent';
+import { DashboardContext } from '../ContexComponent/DashboardContextComponent';
 
 
 function Dashboard() {

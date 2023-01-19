@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 function SideBar() {
@@ -40,20 +40,20 @@ function SideBar() {
             </li>
 
             <li className="nav-item">
-                <Link to='/edit-user/'>
+                <Link to='/nested-route-example'>
                     <div className="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i className="fas fa-fw fa-wrench"></i>
-                        <span>Edit User</span>
+                        <span>Nested Route</span>
                     </div>
                 </Link>
 
             </li>
 
             <li className="nav-item">
-                <Link to='/nested-route-example'>
+                <Link to='/hooks'>
                     <div className="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i className="fas fa-fw fa-wrench"></i>
-                        <span>Nested Route</span>
+                        <span>Hooks</span>
                     </div>
                 </Link>
 

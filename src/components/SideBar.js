@@ -24,9 +24,9 @@ function SideBar() {
             </li>
 
             <hr className="sidebar-divider" />
-
+            
             <div className="sidebar-heading">
-                Interface
+                Local CRUD And Hook's
             </div>
 
             <li className="nav-item">
@@ -60,6 +60,29 @@ function SideBar() {
             </li>
 
             <hr className="sidebar-divider my-0" />
+            
+            <hr className="sidebar-divider" />
+
+            <div className="sidebar-heading">
+                CRUD with Mock API'S
+            </div>
+
+            <li className="nav-item active">
+                <Link to='/all-users'>
+                    <div className="nav-link">
+                        <i className="fas fa-fw fa-tachometer-alt"></i>
+                        <span>All Users</span>
+                    </div>
+                </Link>
+            </li>
+            <li className="nav-item active">
+                <Link to='/add-users'>
+                    <div className="nav-link">
+                        <i className="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Add Users</span>
+                    </div>
+                </Link>
+            </li>
 
         </ul></>
 }

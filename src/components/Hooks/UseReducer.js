@@ -13,9 +13,14 @@ function UseReducer() {
         <Button variant='warning' onClick={() => dispatch({ type: 'reset' })}>Reset</Button>
 
         <div>
-            <input type={'text'} value={state.name} onChange={(e) => dispatch({ type: 'change-name', value: e.target.value })} />
+            <input type={'text'} onChange={(e) => dispatch({ type: 'change-name', value: e.target.value })} />
+        </div>
+        <div>
+            <Button onClick={()=>dispatch({type:'multiple'})}>Checkout</Button>
         </div>
         <div>{state.name}</div>
+        <div>Total Value : {state.total}</div>
+
     </div>
 }
 

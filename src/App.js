@@ -14,6 +14,8 @@ import DashboardContextComponent from './components/ContexComponent/DashboardCon
 import UseRef from './components/Hooks/UseRef';
 import UseMemo from './components/Hooks/UseMemo';
 import UseReducer from './components/Hooks/UseReducer';
+import DashboardApi from './components/CRUDAPI/DashboardApi';
+import AddUserAPi from './components/CRUDAPI/AddUserAPi';
 
 function App() {
 
@@ -43,6 +45,13 @@ function App() {
         <Route path='usememo' element={<UseMemo />} />
         <Route path='usereducer' element={<UseReducer />} />
       </Route>
+
+      {/* {API Related Routes} */}
+
+      <Route path='/all-users' element={<DashboardApi />} />
+      <Route path='/add-users' element={<AddUserAPi />} />
+      <Route path='/add-users/:id' element={<AddUserAPi />} />
+
       <Route path='*' element={<Navigate to={'/dashboard'} />} />
     </Routes>
   </div>
